@@ -15,6 +15,8 @@ function randomID(len) {
 }
 
 export function getUrlParams(url = window.location.href) {
+	console.log("test");
+
 	let urlStr = url.split("?")[1];
 	return new URLSearchParams(urlStr);
 }

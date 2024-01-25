@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { randomID } from "../utils";
 import dataContext from "../stores/DataProvider";
+import { Link } from "react-router-dom";
 
 const TableList = () => {
 	const { data } = useContext(dataContext);
@@ -26,7 +27,9 @@ const TableList = () => {
 									<tr className="text-md">
 										<td>{i + 1}</td>
 										<td>{el.url}</td>
-										<td>http://localhost:5173/main?roomID={el.url}</td>
+										<Link to={`http://localhost:5173/main?roomID=${el.url}`}>
+											<td>http://localhost:5173/main?roomID={el.url}</td>
+										</Link>
 										<td>{el.date}</td>
 										<td>{el.type}</td>
 										<td>Test</td>

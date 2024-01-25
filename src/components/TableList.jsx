@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { randomID } from "../utils";
+import dataContext from "../stores/DataProvider";
 
-const TableList = ({ data }) => {
+const TableList = () => {
+	const { data } = useContext(dataContext);
+
 	return (
 		<>
 			<div className="overflow-x-auto">
@@ -16,17 +19,18 @@ const TableList = ({ data }) => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							{data.map((el, i) => {
-								<>
-									<td>{i + 1}</td>
-									<td>{el.url ? el.url : randomID(5)}</td>
-									<td>http://localhost:5173/main?roomID={el.date}</td>
-									<td>Quality Control Specialist</td>
-									<td>Blue</td>
-								</>;
+						{data &&
+							data.map((el, i) => {
+								return (
+									<tr>
+										<td>{i + 1}</td>
+										<td>{el.url}</td>
+										<td>http://localhost:5173/main?roomID={el.url}</td>
+										<td>{el.date}</td>
+										<td>Test</td>
+									</tr>
+								);
 							})}
-						</tr>
 					</tbody>
 				</table>
 			</div>

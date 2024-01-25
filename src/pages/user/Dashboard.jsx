@@ -7,7 +7,9 @@ import Modal from "../../components/Modal";
 
 const Dashboard = () => {
 	const { user, setUser, data, setData } = useContext(dataContext);
-	x;
+
+	console.log(data);
+
 	const readAfterLoad = async () => {
 		try {
 			const res = await readDatabase("/users");
@@ -62,7 +64,7 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		fetchSchedule("/schedule");
-	}, [data]);
+	}, []);
 
 	return (
 		<>
@@ -70,7 +72,7 @@ const Dashboard = () => {
 				<h1 className="text-3xl font-extrabold">Schedule</h1>
 				<span className="text-3xl font-extrabold">{user && user.name}</span>
 			</div>
-			{data ? <TableList data={data} /> : <div className="flex items-center justify-center font-extrabold h-[30vh] text-2xl">No Schedule</div>}
+			{data.length > 0 ? <TableList /> : <div className="flex items-center justify-center font-extrabold h-[30vh] text-2xl">No Schedule</div>}
 
 			<Modal />
 		</>

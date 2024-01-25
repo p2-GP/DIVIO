@@ -13,6 +13,7 @@ const Modal = () => {
 		console.log(dateNow(), "====", date.value);
 
 		const res = writeDatabase("/schedule", { type: type.value, date: date.value, userid: userid.value, url: url.value });
+		document.getElementById("mainmodal").close();
 	};
 
 	const onChangeDate = (e) => {

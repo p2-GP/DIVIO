@@ -12,11 +12,15 @@
   "dependencies": {
     "@zegocloud/zego-uikit-prebuilt": "^1.10.0",
     "axios": "^1.6.5",
+    "firebase": "^10.7.2",
+    "google-auth-library": "^9.4.2",
+    "googleapis": "^131.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
     "react-toastify": "^10.0.4",
-    "sweetalert2": "^11.10.4"
+    "sweetalert2": "^11.10.4",
+    "uid": "^2.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

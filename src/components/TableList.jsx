@@ -27,8 +27,8 @@ const TableList = () => {
 									<tr className="text-md">
 										<td>{i + 1}</td>
 										<td>{el.url}</td>
-										<Link to={`http://localhost:5173/main?roomID=${el.url}`}>
-											<td>http://localhost:5173/main?roomID={el.url}</td>
+										<Link to={`https://group-phase2.web.app/main?roomID=${el.url}`}>
+											<td>https://group-phase2.web.app/main?roomID={el.url}</td>
 										</Link>
 										<td>{el.date}</td>
 										<td>{el.type}</td>

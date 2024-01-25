@@ -5,6 +5,7 @@ import { validation } from "../utils/validation";
 import { ToastContainer, toast } from "react-toastify";
 import { app, writeDatabase } from "../utils";
 import { onChildAdded } from "firebase/database";
+import { successLogin } from "../utils/sweetAlert";
 
 export default function RegisterPage() {
 	const navigate = useNavigate();
@@ -28,10 +29,8 @@ export default function RegisterPage() {
 		try {
 			const data = await writeDatabase("/users", userInput);
 
-			onChildAdded(commentsRef, (data) => {
-				addCommentElement(postElement, data.key, data.val().text, data.val().author);
-			});
-			console.log(data);
+			navigate("/login");
+			successLogin("Register Success, Please Login");
 		} catch (error) {
 			console.log(error);
 			// validation(error);

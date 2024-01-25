@@ -15,6 +15,7 @@ const TableList = () => {
 							<td>Room Id</td>
 							<td>Link Url</td>
 							<td>Date</td>
+							<td>Type</td>
 							<td>Status</td>
 						</tr>
 					</thead>
@@ -22,11 +23,12 @@ const TableList = () => {
 						{data &&
 							data.map((el, i) => {
 								return (
-									<tr>
+									<tr className="text-md">
 										<td>{i + 1}</td>
 										<td>{el.url}</td>
 										<td>http://localhost:5173/main?roomID={el.url}</td>
 										<td>{el.date}</td>
+										<td>{el.type}</td>
 										<td>Test</td>
 									</tr>
 								);
